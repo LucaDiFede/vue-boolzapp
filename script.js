@@ -1,9 +1,15 @@
-contacts: [
-    {
-        name: 'Michele',
-        avatar: './img/avatar_1.png',
-        visible: true,
-        messages: [
+const { createApp } = Vue;
+
+createApp ({
+   data() {
+    return {
+    activeContact: 0,
+    contacts: [
+     {
+         name: 'Michele',
+         avatar: './img/avatar_1.png',
+         visible: true,
+         messages: [
             {
                 date: '10/01/2020 15:30:55',
                 message: 'Hai portato a spasso il cane?',
@@ -161,3 +167,11 @@ contacts: [
         ],
     }
 ]
+}
+},
+    mounted() {
+        const DateTime = luxon.DateTime;
+        console.log(DateTime.now());
+    }
+
+}).mount('#app');
